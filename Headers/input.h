@@ -1,4 +1,4 @@
-#ifndef INPUT_H
+ #ifndef INPUT_H
 #define INPUT_H
 
 float timer_right = 0.0f;
@@ -16,7 +16,7 @@ void Input(TETRIMINO* piece, BOARD* board, float deltaTime){
 
     else if(IsKeyDown(KEY_RIGHT)){
         timer_right += deltaTime;
-        
+
         if(timer_right >= DELAY){
             piece->dx = 1; piece->Move(board);
             timer_right -= SPEED;
@@ -33,7 +33,7 @@ void Input(TETRIMINO* piece, BOARD* board, float deltaTime){
 
     else if(IsKeyDown(KEY_LEFT)){
         timer_left += deltaTime;
-        
+
         if(timer_left >= DELAY){
             piece->dx = -1; piece->Move(board);
             timer_left -= SPEED;

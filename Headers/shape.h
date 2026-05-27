@@ -1,7 +1,6 @@
 #ifndef SHAPE_H
 #define SHAPE_H
 
-#define FALL_TICK 0.116f
 #define LOCK_DELAY 0.5f
 #define SMOOTH_SPEED 15.0f
 
@@ -141,7 +140,7 @@ public:
         dx = 0;
     }
 
-    void moveDOWN(BOARD* board, float deltaTime, bool isSoftDrop){
+    void moveDOWN(BOARD* board, float deltaTime, bool isSoftDrop, int level){
         if(isLanding){
             lockTimer += deltaTime;
             
@@ -160,8 +159,11 @@ public:
         float speed = isSoftDrop ? 4.0f : 1.0f;
         fall_timer += deltaTime * speed;
         
-        while(fall_timer >= FALL_TICK){
-            fall_timer -= FALL_TICK;
+        float currentFallTick = 0.150f - ((level - 1) * 0.01f);
+        if (currentFallTick < 0.016f) currentFallTick = 0.016f;
+        
+        while(fall_timer >= currentFallTick){
+            fall_timer -= currentFallTick;
             int newY = py + dy;
             
             if(isMoveValid(board, px, newY, rotatedState)){

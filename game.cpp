@@ -22,7 +22,7 @@ int main(){
     const float boardCellHeight = BOARD_HEIGHT * CELL_SIZE;
     const float trueBoardWidth = boardCellWidth + 2.0f;
     const float trueBoardHeight = boardCellHeight + 2.0f;
-    const float totalWidth = trueBoardWidth + PANEL_OFFSET_X + PANEL_WIDTH;
+    const float totalWidth = trueBoardWidth + PANEL_OFFSET + PANEL_WIDTH;
     const float offsetX = (WINDOW_WIDTH - totalWidth) / 2.0f;
     const float offsetY = (WINDOW_HEIGHT - trueBoardHeight) / 2.0f;
     
@@ -52,7 +52,7 @@ int main(){
             
             Input(&shape, &board, deltaTime);
             
-            shape.moveDOWN(&board, deltaTime, IsKeyDown(KEY_DOWN));
+            shape.moveDOWN(&board, deltaTime, IsKeyDown(KEY_DOWN), score.level);
             
             BeginDrawing();
 
@@ -99,6 +99,7 @@ int main(){
         UnloadRenderTexture(boardTarget);
         UnloadRenderTexture(gridTarget);
         UnloadRenderTexture(bgTarget);
+        
         score.Deinitialize();
     
     UnloadGameSprites();

@@ -18,7 +18,7 @@ public:
         return (uint16_t)(rows[y] & ALL_FULL);
     }
 
-    int ClearLines() {
+    int ClearLines(){
         int write_y = BOARD_HEIGHT - 1;
         int linesCleared = 0;
         

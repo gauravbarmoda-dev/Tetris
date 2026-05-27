@@ -20,15 +20,16 @@ void LoadGameSprites(){
         tetrominoTextures[i] = LoadTexture(texturePath[i]);
     }
 };
+
 void UnloadGameSprites(){
-    for(int i = 0; i < NO_OF_SPRITES; i++){   
+    for(int i = 0; i < NO_OF_SPRITES; i++){
         UnloadTexture(tetrominoTextures[i]);
     }
 }
 
 void DrawSprite(int sprite_id, float x, float y, float width, float height){
     Texture2D& texture = tetrominoTextures[sprite_id];
-    
+
     DrawTexturePro(
         texture,
         { 0.0f, 0.0f, (float)texture.width, (float)texture.height},
