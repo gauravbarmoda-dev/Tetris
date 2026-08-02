@@ -1,7 +1,7 @@
 # Tetris
 A simple Tetris clone built using C++ and Raylib.
 
-## Prerequisites
+## Requirements
 - C++ Compiler (e.g., g++)
 - [Raylib](https://www.raylib.com/) library
 

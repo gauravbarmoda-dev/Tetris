@@ -1,7 +1,7 @@
 #include "include.h"
 
-#define WINDOW_WIDTH 1920.0f
-#define WINDOW_HEIGHT 1080.0f
+#define WINDOW_WIDTH 640.0f
+#define WINDOW_HEIGHT 480.0f
 
 int main(){
     
